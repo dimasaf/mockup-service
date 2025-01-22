@@ -1,6 +1,6 @@
 {
   "name": "mock-internet-banking-service",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "mock service",
   "dependencies": {
     "cors": "^2.8.5",
@@ -10,5 +10,11 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
-  }
+  },
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "vercel-sapper"
+    }
+  ]
 }
