@@ -1,0 +1,14 @@
+{
+  "name": "mock-internet-banking-service",
+  "version": "1.0.0",
+  "description": "mock service",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  }
+}
