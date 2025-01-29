@@ -15,5 +15,4 @@ app.use((err, req, res, next) => {
 
 app.use("/api", apiRoutes);
 
-module.exports.handler = serverless(app);
-module.exports.app = app;
+module.exports = serverless(app);
