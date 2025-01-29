@@ -2,6 +2,10 @@
   "version": 2,
   "builds": [
     {
+      "config": {
+        "maxDuration": 10,
+        "memory": 1024
+      },
       "src": "index.js",
       "use": "@vercel/node"
     }
