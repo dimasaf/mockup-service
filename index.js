@@ -11,8 +11,8 @@ app.use(express.json());
 app.use((err, req, res, next) => {
   console.error("Error occurred:", err.stack);
   res.status(500).json({ status: "99", message: "Internal Server Error" });
+  next();
 });
-
 app.use("/api", apiRoutes);
 
 module.exports = serverless(app);
