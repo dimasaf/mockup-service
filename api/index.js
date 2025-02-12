@@ -11,10 +11,10 @@ const delay = (ms) =>
 
 const totalElements = 40;
 
-const generateTableData = (pageNumber, pageSize) => {
+const generateTableData = (pageNumber, pageSize, search) => {
   const totalPages = Math.ceil(totalElements / pageSize);
   const startId = (pageNumber - 1) * pageSize + 1;
-  const dataTransaction = Array.from({ length: pageSize }, (_, index) => {
+  let dataTransaction = Array.from({ length: pageSize }, (_, index) => {
     const idNum = startId + index;
     return {
       id: idNum.toString().padStart(16, "0"),
@@ -29,6 +29,15 @@ const generateTableData = (pageNumber, pageSize) => {
       amount: idNum % 2 === 0 ? "5.000.000,00" : "2.500,00",
     };
   });
+
+  if (search) {
+    const lowerSearch = search.toLowerCase();
+    dataTransaction = dataTransaction.filter((transaction) =>
+      Object.values(transaction).some((value) =>
+        value.toLowerCase().includes(lowerSearch)
+      )
+    );
+  }
 
   return createApiResponse("00", "Success Retrieve Data", {
     pageNumber,
@@ -93,7 +102,7 @@ router.post("/login", async (req, res) => {
 
 router.post("/table-example", async (req, res) => {
   try {
-    const { pageNumber, pageSize } = req.body;
+    const { pageNumber, pageSize, search } = req.body;
 
     await delay(150);
 
@@ -102,11 +111,17 @@ router.post("/table-example", async (req, res) => {
       "Cache-Control": "no-cache, no-store",
     });
 
-    if (pageSize > 40 || pageNumber > 2) {
+    if (
+      (pageSize === 25 && pageNumber > 3) ||
+      (pageSize === 10 && pageNumber > 4) ||
+      (pageSize === 5 && pageNumber > 8)
+    ) {
       return res.status(200).json(createApiResponse("02", "NO DATA FOUND"));
     }
 
-    return res.status(200).json(generateTableData(pageNumber, pageSize));
+    return res
+      .status(200)
+      .json(generateTableData(pageNumber, pageSize, search));
   } catch (error) {
     console.error("example Error:", error);
     return res
