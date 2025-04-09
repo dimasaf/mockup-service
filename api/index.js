@@ -56,6 +56,8 @@ const createApiResponse = (code, message, result = null) => ({
   result,
 });
 
+const failCounts = {};
+
 router.post("/login", async (req, res) => {
   try {
     const { username } = req.body;
@@ -68,6 +70,8 @@ router.post("/login", async (req, res) => {
     });
 
     if (username === "admin") {
+      failCounts[username] = 0;
+
       return res.status(200).json(
         createApiResponse("00", "Login successful", {
           token: "adminToken123",
@@ -83,6 +87,7 @@ router.post("/login", async (req, res) => {
           isSuperAdmin: true,
           userCorporateId: 1,
           transferBeneficiaryType: "corporate",
+          failCount: 0,
         })
       );
     }
@@ -91,7 +96,13 @@ router.post("/login", async (req, res) => {
       return res.status(200).json(createApiResponse("02", "Already Login"));
     }
 
-    return res.status(200).json(createApiResponse("03", "Invalid Credential"));
+    failCounts[username] = (failCounts[username] || 0) + 1;
+
+    return res.status(200).json(
+      createApiResponse("03", "Invalid Credential", {
+        failCount: failCounts[username],
+      })
+    );
   } catch (error) {
     console.error("Login Error:", error);
     return res
