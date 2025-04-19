@@ -141,4 +141,26 @@ router.post("/table-example", async (req, res) => {
   }
 });
 
+router.post("/menu-navigation", async (req, res) => {
+  try {
+    await delay(150);
+
+    res.set({
+      "Content-Type": "application/json",
+      "Cache-Control": "no-cache, no-store",
+    });
+
+    return res.status(200).json(
+      createApiResponse("00", "Fetch Success", {
+        menuId: [0, 3, 1, 11, 111, 112, 113, 12, 121, 2, 21, 22, 222, 4],
+      })
+    );
+  } catch (error) {
+    console.error("example Error:", error);
+    return res
+      .status(500)
+      .json(createApiResponse("99", "Internal Server Error"));
+  }
+});
+
 module.exports = router;
