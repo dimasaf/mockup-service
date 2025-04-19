@@ -143,7 +143,7 @@ router.post("/table-example", async (req, res) => {
 
 router.post("/menu-navigation", async (req, res) => {
   try {
-    await delay(150);
+    await delay(550);
 
     res.set({
       "Content-Type": "application/json",
