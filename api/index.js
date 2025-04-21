@@ -154,7 +154,7 @@ router.post("/menu-navigation", async (req, res) => {
       createApiResponse("00", "Fetch Success", {
         menuId: [
           0, 3, 1, 11, 111, 112, 113, 12, 121, 2, 21, 211, 212, 214, 215, 22,
-          222, 4,
+          221, 222, 4,
         ],
       })
     );
