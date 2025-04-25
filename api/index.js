@@ -52,7 +52,7 @@ const createSuccessResponse = (result = {}) => ({
   result,
 });
 
-const createGeneralErrorResponse = (errorGeneral = {}) => ({ errorGeneral });
+const createGeneralErrorResponse = (errorGeneral = {}) => errorGeneral;
 const createMappedErrorResponse = (code, codeSystem, errorMapped = {}) => ({
   code,
   codeSystem,
