@@ -39,7 +39,7 @@ const generateTableData = (pageNumber, pageSize, search) => {
     );
   }
 
-  return createApiResponse("00", "Success Retrieve Data", {
+  return createSuccessResponse({
     pageNumber,
     pageSize,
     totalPages,
@@ -48,12 +48,15 @@ const generateTableData = (pageNumber, pageSize, search) => {
   });
 };
 
-const createApiResponse = (code, message, result = null) => ({
-  activityRefCode: "ACT123456",
-  codeSystem: "SYSTEM_CODE",
-  message,
-  code,
+const createSuccessResponse = (result = {}) => ({
   result,
+});
+
+const createGeneralErrorResponse = (errorGeneral = {}) => ({ errorGeneral });
+const createMappedErrorResponse = (code, codeSystem, errorMapped = {}) => ({
+  code,
+  codeSystem,
+  result: errorMapped,
 });
 
 const failCounts = {};
@@ -73,7 +76,7 @@ router.post("/login", async (req, res) => {
       failCounts[username] = 0;
 
       return res.status(200).json(
-        createApiResponse("00", "Login successful", {
+        createSuccessResponse({
           token: "adminToken123",
           userMenu: ["dashboard", "settings"],
           userRole: "admin",
@@ -93,21 +96,36 @@ router.post("/login", async (req, res) => {
     }
 
     if (username === "user") {
-      return res.status(200).json(createApiResponse("02", "Already Login"));
+      return res.status(400).json(
+        createGeneralErrorResponse({
+          code: "0020",
+          codeSystem: "BSI-XPAN",
+          message: "dlkajjdal Server Error",
+          activityRefCode: "456d9314-cf4e-4fe1-a256-8ffcf51b2c99",
+        })
+      );
     }
 
     failCounts[username] = (failCounts[username] || 0) + 1;
 
-    return res.status(200).json(
-      createApiResponse("03", "Invalid Credential", {
+    return res.status(400).json(
+      createMappedErrorResponse("103", "Invalid Credential", {
+        errorCode: "103",
+        engMessage: "Invalid Credential",
+        idnMessage: "Salah Kredential",
         failCount: failCounts[username],
       })
     );
   } catch (error) {
     console.error("Login Error:", error);
-    return res
-      .status(500)
-      .json(createApiResponse("99", "Internal Server Error"));
+    return res.status(500).json(
+      createGeneralErrorResponse({
+        code: "0021",
+        codeSystem: "BSI-XPAN",
+        message: "dlkajjdal Server Error",
+        activityRefCode: "456d9314-cf4e-4fe1-a256-8ffcf51b2c99",
+      })
+    );
   }
 });
 
@@ -127,7 +145,13 @@ router.post("/table-example", async (req, res) => {
       (pageSize === 10 && pageNumber > 4) ||
       (pageSize === 5 && pageNumber > 8)
     ) {
-      return res.status(200).json(createApiResponse("02", "NO DATA FOUND"));
+      return res.status(200).json(
+        createMappedErrorResponse("103", "miea", {
+          errorCode: "103",
+          engMessage: "salah bro",
+          idnMessage: "Salah bro",
+        })
+      );
     }
 
     return res
@@ -135,9 +159,14 @@ router.post("/table-example", async (req, res) => {
       .json(generateTableData(pageNumber, pageSize, search));
   } catch (error) {
     console.error("example Error:", error);
-    return res
-      .status(500)
-      .json(createApiResponse("99", "Internal Server Error"));
+    return res.status(500).json(
+      createGeneralErrorResponse({
+        code: "0020",
+        codeSystem: "BSI-XPAN",
+        message: "dlkajjdal Server Error",
+        activityRefCode: "456d9314-cf4e-4fe1-a256-8ffcf51b2c99",
+      })
+    );
   }
 });
 
@@ -151,7 +180,7 @@ router.post("/menu-navigation", async (req, res) => {
     });
 
     return res.status(200).json(
-      createApiResponse("00", "Fetch Success", {
+      createSuccessResponse({
         menuId: [
           0, 3, 1, 11, 111, 112, 113, 12, 121, 2, 21, 211, 212, 214, 215, 22,
           221, 222, 4,
@@ -160,9 +189,13 @@ router.post("/menu-navigation", async (req, res) => {
     );
   } catch (error) {
     console.error("example Error:", error);
-    return res
-      .status(500)
-      .json(createApiResponse("99", "Internal Server Error"));
+    return res.status(500).json(
+      createMappedErrorResponse("103", "error bro", {
+        errorCode: "103",
+        engMessage: "error bro",
+        idnMessage: "error bro",
+      })
+    );
   }
 });
 
