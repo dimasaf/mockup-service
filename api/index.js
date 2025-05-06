@@ -227,267 +227,258 @@ router.get("/contentservice/dynamiccontent/get", async (req, res) => {
     if (contentCode === "SECTION1") {
       return res.status(200).json(
         createSuccessResponse({
-          result: {
-            section: "Section 1",
-            titleId: "Xpan Mobile",
-            titleEng: "Xpan Mobile",
-            subTitleId: "Buat Pengalaman Transaksi Makin Mudah",
-            subTitleEng: "Buat Pengalaman Transaksi Makin Mudah",
-            child: [
-              {
-                titleId: "Kelola Bisnis Dengan System Maker - Approver",
-                titleEng: "Kelola Bisnis Dengan System Maker - Approver",
-                subTitleId: "Proses Transaksi Lebih Sistematis dan Transparan",
-                subTitleEng: "Proses Transaksi Lebih Sistematis dan Transparan",
-                image: "http image url",
-              },
-              {
-                titleId: "Bisnis Dalam Genggaman : Xpan By BSI Mobile",
-                titleEng: "Bisnis Dalam Genggaman : Xpan By BSI Mobile",
-                subTitleId:
-                  "Buat transaksi, pantau kas, kelola bisnis dengan fleksibel",
-                subTitleEng:
-                  "Buat transaksi, pantau kas, kelola bisnis dengan fleksibel",
-                image: "http image url",
-              },
-              {
-                titleId: "Rencana Langkah Keuangan Anda",
-                titleEng: "Rencana Langkah Keuangan Anda",
-                subTitleId:
-                  "Lebih mudah dengan pembiayaan yang dipersonalisasi",
-                subTitleEng:
-                  "Lebih mudah dengan pembiayaan yang dipersonalisasi",
-                image: "http image url",
-              },
-            ],
-          },
+          section: "Section 1",
+          titleId: "Xpan Mobile",
+          titleEng: "Xpan Mobile",
+          subTitleId: "Buat Pengalaman Transaksi Makin Mudah",
+          subTitleEng: "Buat Pengalaman Transaksi Makin Mudah",
+          child: [
+            {
+              titleId: "Kelola Bisnis Dengan System Maker - Approver",
+              titleEng: "Kelola Bisnis Dengan System Maker - Approver",
+              subTitleId: "Proses Transaksi Lebih Sistematis dan Transparan",
+              subTitleEng: "Proses Transaksi Lebih Sistematis dan Transparan",
+              image: "http image url",
+            },
+            {
+              titleId: "Bisnis Dalam Genggaman : Xpan By BSI Mobile",
+              titleEng: "Bisnis Dalam Genggaman : Xpan By BSI Mobile",
+              subTitleId:
+                "Buat transaksi, pantau kas, kelola bisnis dengan fleksibel",
+              subTitleEng:
+                "Buat transaksi, pantau kas, kelola bisnis dengan fleksibel",
+              image: "http image url",
+            },
+            {
+              titleId: "Rencana Langkah Keuangan Anda",
+              titleEng: "Rencana Langkah Keuangan Anda",
+              subTitleId: "Lebih mudah dengan pembiayaan yang dipersonalisasi",
+              subTitleEng: "Lebih mudah dengan pembiayaan yang dipersonalisasi",
+              image: "http image url",
+            },
+          ],
         })
       );
     }
     if (contentCode === "SECTION3") {
       return res.status(200).json(
         createSuccessResponse({
-          result: {
-            section: "Section 3",
-            titleId: "Syarat dan Ketentuan",
-            titleEng: "Terms and Condition",
-            subTitleId:
-              "Kelola bisnis dengan persyaratan dan ketentuan yang mudah hanya di Xpan By BSI",
-            subTitleEng:
-              "Kelola bisnis dengan persyaratan dan ketentuan yang mudah hanya di Xpan By BSI",
-            child: [
-              {
-                titleId: "Requirements",
-                titleEng: "Requirements",
-                ordering: 1,
-                child: [
-                  {
-                    titleId: "Individual Customer",
-                    titleEng: "Individual Customer",
-                    ordering: 1,
-                    child: [
-                      {
-                        titleId:
-                          "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
-                        titleEng:
-                          "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
-                        ordering: 1,
-                      },
-                      {
-                        titleId:
-                          "Savings Book (for Savings Account) and Current Account (for Giro Account).",
-                        titleEng:
-                          "Savings Book (for Savings Account) and Current Account (for Giro Account).",
-                        ordering: 2,
-                      },
-                    ],
-                  },
-                  {
-                    titleId: "Company Customer",
-                    titleEng: "Company Customer",
-                    ordering: 2,
-                    child: [
-                      {
-                        titleId:
-                          "Show the original document and a copy of the valid Articles of Association/Bylaws (AD/ART).",
-                        titleEng:
-                          "Show the original document and a copy of the valid Articles of Association/Bylaws (AD/ART).",
-                        ordering: 1,
-                      },
-                      {
-                        titleId:
-                          "Submit the original power of attorney appointment letter stamped and signed by the Management (in accordance with the bylaws) if the application is represented by Person in Charge (PIC).",
-                        titleEng:
-                          "Submit the original power of attorney appointment letter stamped and signed by the Management (in accordance with the bylaws) if the application is represented by Person in Charge (PIC).",
-                        ordering: 2,
-                      },
-                      {
-                        titleId:
-                          "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
-                        titleEng:
-                          "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
-                        ordering: 3,
-                      },
-                      {
-                        titleId:
-                          "Savings Book (for Savings Account) and Current Account (for Giro Account).",
-                        titleEng:
-                          "Savings Book (for Savings Account) and Current Account (for Giro Account).",
-                        ordering: 4,
-                      },
-                      {
-                        titleId:
-                          "Submit other supporting documents if required.",
-                        titleEng:
-                          "Submit other supporting documents if required.",
-                        ordering: 5,
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                titleId: "Registration Procedure",
-                titleEng: "Registration Procedure",
-                ordering: 2,
-                child: [
-                  {
-                    titleId: "Individual Customer",
-                    titleEng: "Individual Customer",
-                    ordering: 1,
-                    child: [
-                      {
-                        titleId:
-                          "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
-                        titleEng:
-                          "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
-                        ordering: 1,
-                      },
-                      {
-                        titleId:
-                          "Savings Book (for Savings Account) and Current Account (for Giro Account).",
-                        titleEng:
-                          "Savings Book (for Savings Account) and Current Account (for Giro Account).",
-                        ordering: 2,
-                      },
-                    ],
-                  },
-                  {
-                    titleId: "Company Customer",
-                    titleEng: "Company Customer",
-                    ordering: 2,
-                    child: [
-                      {
-                        titleId:
-                          "Show the original document and a copy of the valid Articles of Association/Bylaws (AD/ART).",
-                        titleEng:
-                          "Show the original document and a copy of the valid Articles of Association/Bylaws (AD/ART).",
-                        ordering: 1,
-                      },
-                      {
-                        titleId:
-                          "Submit the original power of attorney appointment letter stamped and signed by the Management (in accordance with the bylaws) if the application is represented by Person in Charge (PIC).",
-                        titleEng:
-                          "Submit the original power of attorney appointment letter stamped and signed by the Management (in accordance with the bylaws) if the application is represented by Person in Charge (PIC).",
-                        ordering: 2,
-                      },
-                      {
-                        titleId:
-                          "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
-                        titleEng:
-                          "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
-                        ordering: 3,
-                      },
-                      {
-                        titleId:
-                          "Savings Book (for Savings Account) and Current Account (for Giro Account).",
-                        titleEng:
-                          "Savings Book (for Savings Account) and Current Account (for Giro Account).",
-                        ordering: 4,
-                      },
-                      {
-                        titleId:
-                          "Submit other supporting documents if required.",
-                        titleEng:
-                          "Submit other supporting documents if required.",
-                        ordering: 5,
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                titleId: "Fees & Limits",
-                titleEng: "Fees & Limits",
-                ordering: 3,
-                child: [
-                  {
-                    titleId: "Individual Customer",
-                    titleEng: "Individual Customer",
-                    ordering: 1,
-                    child: [
-                      {
-                        titleId:
-                          "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
-                        titleEng:
-                          "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
-                        ordering: 1,
-                      },
-                      {
-                        titleId:
-                          "Savings Book (for Savings Account) and Current Account (for Giro Account).",
-                        titleEng:
-                          "Savings Book (for Savings Account) and Current Account (for Giro Account).",
-                        ordering: 2,
-                      },
-                    ],
-                  },
-                  {
-                    titleId: "Company Customer",
-                    titleEng: "Company Customer",
-                    ordering: 2,
-                    child: [
-                      {
-                        titleId:
-                          "Show the original document and a copy of the valid Articles of Association/Bylaws (AD/ART).",
-                        titleEng:
-                          "Show the original document and a copy of the valid Articles of Association/Bylaws (AD/ART).",
-                        ordering: 1,
-                      },
-                      {
-                        titleId:
-                          "Submit the original power of attorney appointment letter stamped and signed by the Management (in accordance with the bylaws) if the application is represented by Person in Charge (PIC).",
-                        titleEng:
-                          "Submit the original power of attorney appointment letter stamped and signed by the Management (in accordance with the bylaws) if the application is represented by Person in Charge (PIC).",
-                        ordering: 2,
-                      },
-                      {
-                        titleId:
-                          "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
-                        titleEng:
-                          "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
-                        ordering: 3,
-                      },
-                      {
-                        titleId:
-                          "Savings Book (for Savings Account) and Current Account (for Giro Account).",
-                        titleEng:
-                          "Savings Book (for Savings Account) and Current Account (for Giro Account).",
-                        ordering: 4,
-                      },
-                      {
-                        titleId:
-                          "Submit other supporting documents if required.",
-                        titleEng:
-                          "Submit other supporting documents if required.",
-                        ordering: 5,
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
+          section: "Section 3",
+          titleId: "Syarat dan Ketentuan",
+          titleEng: "Terms and Condition",
+          subTitleId:
+            "Kelola bisnis dengan persyaratan dan ketentuan yang mudah hanya di Xpan By BSI",
+          subTitleEng:
+            "Kelola bisnis dengan persyaratan dan ketentuan yang mudah hanya di Xpan By BSI",
+          child: [
+            {
+              titleId: "Requirements",
+              titleEng: "Requirements",
+              ordering: 1,
+              child: [
+                {
+                  titleId: "Individual Customer",
+                  titleEng: "Individual Customer",
+                  ordering: 1,
+                  child: [
+                    {
+                      titleId:
+                        "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
+                      titleEng:
+                        "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
+                      ordering: 1,
+                    },
+                    {
+                      titleId:
+                        "Savings Book (for Savings Account) and Current Account (for Giro Account).",
+                      titleEng:
+                        "Savings Book (for Savings Account) and Current Account (for Giro Account).",
+                      ordering: 2,
+                    },
+                  ],
+                },
+                {
+                  titleId: "Company Customer",
+                  titleEng: "Company Customer",
+                  ordering: 2,
+                  child: [
+                    {
+                      titleId:
+                        "Show the original document and a copy of the valid Articles of Association/Bylaws (AD/ART).",
+                      titleEng:
+                        "Show the original document and a copy of the valid Articles of Association/Bylaws (AD/ART).",
+                      ordering: 1,
+                    },
+                    {
+                      titleId:
+                        "Submit the original power of attorney appointment letter stamped and signed by the Management (in accordance with the bylaws) if the application is represented by Person in Charge (PIC).",
+                      titleEng:
+                        "Submit the original power of attorney appointment letter stamped and signed by the Management (in accordance with the bylaws) if the application is represented by Person in Charge (PIC).",
+                      ordering: 2,
+                    },
+                    {
+                      titleId:
+                        "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
+                      titleEng:
+                        "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
+                      ordering: 3,
+                    },
+                    {
+                      titleId:
+                        "Savings Book (for Savings Account) and Current Account (for Giro Account).",
+                      titleEng:
+                        "Savings Book (for Savings Account) and Current Account (for Giro Account).",
+                      ordering: 4,
+                    },
+                    {
+                      titleId: "Submit other supporting documents if required.",
+                      titleEng:
+                        "Submit other supporting documents if required.",
+                      ordering: 5,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              titleId: "Registration Procedure",
+              titleEng: "Registration Procedure",
+              ordering: 2,
+              child: [
+                {
+                  titleId: "Individual Customer",
+                  titleEng: "Individual Customer",
+                  ordering: 1,
+                  child: [
+                    {
+                      titleId:
+                        "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
+                      titleEng:
+                        "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
+                      ordering: 1,
+                    },
+                    {
+                      titleId:
+                        "Savings Book (for Savings Account) and Current Account (for Giro Account).",
+                      titleEng:
+                        "Savings Book (for Savings Account) and Current Account (for Giro Account).",
+                      ordering: 2,
+                    },
+                  ],
+                },
+                {
+                  titleId: "Company Customer",
+                  titleEng: "Company Customer",
+                  ordering: 2,
+                  child: [
+                    {
+                      titleId:
+                        "Show the original document and a copy of the valid Articles of Association/Bylaws (AD/ART).",
+                      titleEng:
+                        "Show the original document and a copy of the valid Articles of Association/Bylaws (AD/ART).",
+                      ordering: 1,
+                    },
+                    {
+                      titleId:
+                        "Submit the original power of attorney appointment letter stamped and signed by the Management (in accordance with the bylaws) if the application is represented by Person in Charge (PIC).",
+                      titleEng:
+                        "Submit the original power of attorney appointment letter stamped and signed by the Management (in accordance with the bylaws) if the application is represented by Person in Charge (PIC).",
+                      ordering: 2,
+                    },
+                    {
+                      titleId:
+                        "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
+                      titleEng:
+                        "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
+                      ordering: 3,
+                    },
+                    {
+                      titleId:
+                        "Savings Book (for Savings Account) and Current Account (for Giro Account).",
+                      titleEng:
+                        "Savings Book (for Savings Account) and Current Account (for Giro Account).",
+                      ordering: 4,
+                    },
+                    {
+                      titleId: "Submit other supporting documents if required.",
+                      titleEng:
+                        "Submit other supporting documents if required.",
+                      ordering: 5,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              titleId: "Fees & Limits",
+              titleEng: "Fees & Limits",
+              ordering: 3,
+              child: [
+                {
+                  titleId: "Individual Customer",
+                  titleEng: "Individual Customer",
+                  ordering: 1,
+                  child: [
+                    {
+                      titleId:
+                        "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
+                      titleEng:
+                        "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
+                      ordering: 1,
+                    },
+                    {
+                      titleId:
+                        "Savings Book (for Savings Account) and Current Account (for Giro Account).",
+                      titleEng:
+                        "Savings Book (for Savings Account) and Current Account (for Giro Account).",
+                      ordering: 2,
+                    },
+                  ],
+                },
+                {
+                  titleId: "Company Customer",
+                  titleEng: "Company Customer",
+                  ordering: 2,
+                  child: [
+                    {
+                      titleId:
+                        "Show the original document and a copy of the valid Articles of Association/Bylaws (AD/ART).",
+                      titleEng:
+                        "Show the original document and a copy of the valid Articles of Association/Bylaws (AD/ART).",
+                      ordering: 1,
+                    },
+                    {
+                      titleId:
+                        "Submit the original power of attorney appointment letter stamped and signed by the Management (in accordance with the bylaws) if the application is represented by Person in Charge (PIC).",
+                      titleEng:
+                        "Submit the original power of attorney appointment letter stamped and signed by the Management (in accordance with the bylaws) if the application is represented by Person in Charge (PIC).",
+                      ordering: 2,
+                    },
+                    {
+                      titleId:
+                        "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
+                      titleEng:
+                        "Show original proof of valid identity. Indonesian Citizen: KTP-electronic; foreigners: Passport accompanied by Limited Stay Permit Card (KITAS) or Permanent Stay Permit Card (KITAP).",
+                      ordering: 3,
+                    },
+                    {
+                      titleId:
+                        "Savings Book (for Savings Account) and Current Account (for Giro Account).",
+                      titleEng:
+                        "Savings Book (for Savings Account) and Current Account (for Giro Account).",
+                      ordering: 4,
+                    },
+                    {
+                      titleId: "Submit other supporting documents if required.",
+                      titleEng:
+                        "Submit other supporting documents if required.",
+                      ordering: 5,
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
         })
       );
     }
