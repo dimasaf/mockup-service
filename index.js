@@ -6,7 +6,11 @@ const app = express();
 const PORT = 3030;
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    exposedHeaders: ["token", "cf-ray", "x-powered-by", "token"],
+  })
+);
 app.use(express.json());
 
 app.use((err, req, res, next) => {
