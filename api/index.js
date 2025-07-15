@@ -2315,4 +2315,34 @@ router.post("/lang", async (req, res) => {
   }
 });
 
+router.post("/get-phoneNumber", async (req, res) => {
+  try {
+    const { username } = req.body;
+
+    await delay(550);
+
+    res.set({
+      "Content-Type": "application/json",
+      "Cache-Control": "no-cache, no-store",
+    });
+
+    if (username === "Victoria01") {
+      return res.status(200).json(
+        createSuccessResponse({
+          phoneNumber: "6123123423123",
+        })
+      );
+    }
+  } catch (error) {
+    console.error("example Error:", error);
+    return res.status(500).json(
+      createMappedErrorResponse("103", "error bro", {
+        errorCode: "103",
+        engMessage: "error bro",
+        idnMessage: "error bro",
+      })
+    );
+  }
+});
+
 module.exports = router;
