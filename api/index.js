@@ -201,7 +201,7 @@ router.post("/table-example", async (req, res) => {
   }
 });
 
-router.post("/appconfigservice/appconfig/megamenu/web", async (req, res) => {
+router.get("/appconfigservice/appconfig/megamenu/web", async (req, res) => {
   try {
     await delay(550);
 
