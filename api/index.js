@@ -61,7 +61,7 @@ const createMappedErrorResponse = (code, codeSystem, errorMapped = {}) => ({
 
 const failCounts = {};
 
-router.post("/login", async (req, res) => {
+router.post("/loginservice/v1/login/web", async (req, res) => {
   try {
     const { username } = req.body;
 
@@ -72,29 +72,56 @@ router.post("/login", async (req, res) => {
       "Cache-Control": "no-cache, no-store",
     });
 
-    if (username === "admin") {
+    if (username === "Victoria01") {
       failCounts[username] = 0;
+
+      // Token yang sudah ada (masih dipakai)
       res.set(
         "token",
         "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjpbIlJPTEVfQVBQUk9WRSJdLCJzZXNzaW9uX2tleSI6IklCfDEiLCJ1c2VyIjoiVmljdG9yaWEwMSIsInVzZXJfcHJvZmlsZV9pZCI6MSwidXNlcm5hbWUiOiJWaWN0b3JpYTAxIiwiY2hhbm5lbENvZGUiOiJJQiIsImV4cCI6MTc0NzM4NDg3N30.RIqJsSGH4BO4TNZvCk8UrAexN8EYr6GeMNsMKa_6cp5EGuVec8Jl3fDx6b7AGQ2CWuta5L-JlyD5sO82RpXidg"
       );
 
+      // Access token mock di header
+      const accessTokenPayload = {
+        role: ["admin", "user"],
+        session_key: "abc123def456ghi789",
+        user: "dimas.adji",
+        user_profile_id: 101,
+        username: "dimas.adji",
+        channelCode: "WEBPORTAL",
+        exp: 1767225600,
+      };
+
+      const encodedAccessToken = Buffer.from(
+        JSON.stringify(accessTokenPayload)
+      ).toString("base64");
+      res.set("access-token", encodedAccessToken);
+
       return res.status(200).json(
         createSuccessResponse({
-          token: "adminToken123",
-          userMenu: ["dashboard", "settings"],
-          userRole: "admin",
-          refreshToken: "refreshAdminToken123",
-          name: "Admin User",
-          email: "admin@example.com",
-          corporateMasterProfileCode: "CORP_ADMIN",
-          corporateUserProfileCode: "USER_ADMIN",
-          statusLogin: 1,
-          otpType: "email",
-          isSuperAdmin: true,
-          userCorporateId: 1,
-          transferBeneficiaryType: "corporate",
-          failCount: 0,
+          nameAlias: "Sule anjay",
+          language: "id",
+          email: "sule@example.com",
+          phoneNumber: "+6281234567890",
+          address: "Jl. Mawar No. 10, Perumahan Asri",
+          subdistrict: "Tamatan",
+          city: "Cikidiw",
+          province: "Jawa lu",
+          vpan: "9876-XXXX-XXXX-1234",
+          userStatus: "ACTIVE",
+          userRegStatus: "VERIFIED",
+          status: "ACTIVE",
+          vcallStatus: "ENABLED",
+          previousLogin: "2025-08-01T10:25:00Z",
+          lastLogin: "2025-08-04T06:45:00Z",
+          profileImageUrl: "https://example.com/images/profile/dimas.jpg",
+          role: ["maker"],
+          session_key: "abc123def456ghi789",
+          user: "dimas.adjisule",
+          user_profile_id: 101,
+          username: "sule",
+          channelCode: "WEBPORTAL",
+          exp: 1767225600,
         })
       );
     }
@@ -174,7 +201,7 @@ router.post("/table-example", async (req, res) => {
   }
 });
 
-router.post("/menu-navigation", async (req, res) => {
+router.post("/appconfigservice/appconfig/megamenu/web", async (req, res) => {
   try {
     await delay(550);
 
@@ -185,10 +212,262 @@ router.post("/menu-navigation", async (req, res) => {
 
     return res.status(200).json(
       createSuccessResponse({
-        menuId: [
-          0, 3, 1, 11, 111, 112, 113, 12, 121, 2, 21, 211, 212, 214, 215, 22,
-          221, 222, 4,
-        ],
+        menuId: {
+          listMenu: [
+            {
+              id: "1",
+              name: "Beranda",
+            },
+            {
+              id: "6811",
+              name: "Pembiayaan Distribusi",
+            },
+            {
+              id: "3",
+              name: "Info Rekening",
+            },
+            {
+              id: "31",
+              name: "Info Rekening",
+            },
+            {
+              id: "311",
+              name: "Cek Saldo & Mutasi",
+            },
+            {
+              id: "312",
+              name: "Buka rekening Baru",
+            },
+            {
+              id: "4",
+              name: "Transaksi",
+            },
+            {
+              id: "41",
+              name: "Transfer",
+            },
+            {
+              id: "411",
+              name: "Single Transfer",
+            },
+            {
+              id: "412",
+              name: "Multi Transfer",
+            },
+            {
+              id: "413",
+              name: "Transfer Valas",
+            },
+            {
+              id: "42",
+              name: "Payroll",
+            },
+            {
+              id: "421",
+              name: "Payroll",
+            },
+            {
+              id: "422",
+              name: "Monitoring Payroll",
+            },
+            {
+              id: "43",
+              name: "Bayar & Beli",
+            },
+            {
+              id: "431",
+              name: "Bayar & Beli",
+            },
+            {
+              id: "432",
+              name: "Multi Bayar & Beli",
+            },
+            {
+              id: "44",
+              name: "Transaksi Lainnya",
+            },
+            {
+              id: "441",
+              name: "Transaksi Terjadwal",
+            },
+            {
+              id: "442",
+              name: "Transaksi Favorit",
+            },
+            {
+              id: "5",
+              name: "Manajemen Akun",
+            },
+            {
+              id: "6",
+              name: "Layanan Kami",
+            },
+            {
+              id: "61",
+              name: "Layanan Islami",
+            },
+            {
+              id: "611",
+              name: "Berbagi",
+            },
+            {
+              id: "612",
+              name: "Qurban",
+            },
+            {
+              id: "613",
+              name: "Haji & Umroh",
+            },
+            {
+              id: "614",
+              name: "Sertifikasi Produk Halal",
+            },
+            {
+              id: "62",
+              name: "Layanan Bisnis",
+            },
+            {
+              id: "620",
+              name: "Pembiayaan",
+            },
+            {
+              id: "621",
+              name: "Pembiayaan",
+            },
+            {
+              id: "6211",
+              name: "Pengajuan",
+            },
+            {
+              id: "6212",
+              name: "Tagihan",
+            },
+            {
+              id: "6213",
+              name: "Informasi",
+            },
+            {
+              id: "630",
+              name: "Kartu",
+            },
+            {
+              id: "631",
+              name: "Kartu",
+            },
+            {
+              id: "6311",
+              name: "Debit",
+            },
+            {
+              id: "6312",
+              name: "Kartu Hasanah",
+            },
+            {
+              id: "6313",
+              name: "Kartu Perusahaan",
+            },
+            {
+              id: "640",
+              name: "Merchant",
+            },
+            {
+              id: "641",
+              name: "Merchant",
+            },
+            {
+              id: "6411",
+              name: "Pendaftaran QRIS",
+            },
+            {
+              id: "6412",
+              name: "Pencatatan & Laporan Penjualan",
+            },
+            {
+              id: "6413",
+              name: "EDC",
+            },
+            {
+              id: "650",
+              name: "Investasi",
+            },
+            {
+              id: "651",
+              name: "Investasi",
+            },
+            {
+              id: "6511",
+              name: "SBN Online",
+            },
+            {
+              id: "6512",
+              name: "Deposito",
+            },
+            {
+              id: "63",
+              name: "Layanan Lainnya",
+            },
+            {
+              id: "660",
+              name: "Kurs Valas",
+            },
+            {
+              id: "661",
+              name: "Kurs Valas",
+            },
+            {
+              id: "6611",
+              name: "Informasi Kurs",
+            },
+            {
+              id: "6612",
+              name: "Kalkulator Kurs",
+            },
+            {
+              id: "6613",
+              name: "Tabel Nilai Tukar Kurs",
+            },
+            {
+              id: "670",
+              name: "MSPP",
+            },
+            {
+              id: "671",
+              name: "MSPP",
+            },
+            {
+              id: "6711",
+              name: "Curah & Kemasan",
+            },
+            {
+              id: "6712",
+              name: "Penawaran",
+            },
+            {
+              id: "6713",
+              name: "Produk Alokasi",
+            },
+            {
+              id: "6714",
+              name: "Pemantauan",
+            },
+            {
+              id: "6715",
+              name: "Rilis Manual",
+            },
+            {
+              id: "680",
+              name: "Rantai Pasokan",
+            },
+            {
+              id: "681",
+              name: "Rantai Pasokan",
+            },
+            {
+              id: "2",
+              name: "Tugas Saya",
+            },
+          ],
+        },
       })
     );
   } catch (error) {
