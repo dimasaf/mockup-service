@@ -212,262 +212,260 @@ router.get("/appconfigservice/appconfig/megamenu/web", async (req, res) => {
 
     return res.status(200).json(
       createSuccessResponse({
-        menuId: {
-          listMenu: [
-            {
-              id: "1",
-              name: "Beranda",
-            },
-            {
-              id: "6811",
-              name: "Pembiayaan Distribusi",
-            },
-            {
-              id: "3",
-              name: "Info Rekening",
-            },
-            {
-              id: "31",
-              name: "Info Rekening",
-            },
-            {
-              id: "311",
-              name: "Cek Saldo & Mutasi",
-            },
-            {
-              id: "312",
-              name: "Buka rekening Baru",
-            },
-            {
-              id: "4",
-              name: "Transaksi",
-            },
-            {
-              id: "41",
-              name: "Transfer",
-            },
-            {
-              id: "411",
-              name: "Single Transfer",
-            },
-            {
-              id: "412",
-              name: "Multi Transfer",
-            },
-            {
-              id: "413",
-              name: "Transfer Valas",
-            },
-            {
-              id: "42",
-              name: "Payroll",
-            },
-            {
-              id: "421",
-              name: "Payroll",
-            },
-            {
-              id: "422",
-              name: "Monitoring Payroll",
-            },
-            {
-              id: "43",
-              name: "Bayar & Beli",
-            },
-            {
-              id: "431",
-              name: "Bayar & Beli",
-            },
-            {
-              id: "432",
-              name: "Multi Bayar & Beli",
-            },
-            {
-              id: "44",
-              name: "Transaksi Lainnya",
-            },
-            {
-              id: "441",
-              name: "Transaksi Terjadwal",
-            },
-            {
-              id: "442",
-              name: "Transaksi Favorit",
-            },
-            {
-              id: "5",
-              name: "Manajemen Akun",
-            },
-            {
-              id: "6",
-              name: "Layanan Kami",
-            },
-            {
-              id: "61",
-              name: "Layanan Islami",
-            },
-            {
-              id: "611",
-              name: "Berbagi",
-            },
-            {
-              id: "612",
-              name: "Qurban",
-            },
-            {
-              id: "613",
-              name: "Haji & Umroh",
-            },
-            {
-              id: "614",
-              name: "Sertifikasi Produk Halal",
-            },
-            {
-              id: "62",
-              name: "Layanan Bisnis",
-            },
-            {
-              id: "620",
-              name: "Pembiayaan",
-            },
-            {
-              id: "621",
-              name: "Pembiayaan",
-            },
-            {
-              id: "6211",
-              name: "Pengajuan",
-            },
-            {
-              id: "6212",
-              name: "Tagihan",
-            },
-            {
-              id: "6213",
-              name: "Informasi",
-            },
-            {
-              id: "630",
-              name: "Kartu",
-            },
-            {
-              id: "631",
-              name: "Kartu",
-            },
-            {
-              id: "6311",
-              name: "Debit",
-            },
-            {
-              id: "6312",
-              name: "Kartu Hasanah",
-            },
-            {
-              id: "6313",
-              name: "Kartu Perusahaan",
-            },
-            {
-              id: "640",
-              name: "Merchant",
-            },
-            {
-              id: "641",
-              name: "Merchant",
-            },
-            {
-              id: "6411",
-              name: "Pendaftaran QRIS",
-            },
-            {
-              id: "6412",
-              name: "Pencatatan & Laporan Penjualan",
-            },
-            {
-              id: "6413",
-              name: "EDC",
-            },
-            {
-              id: "650",
-              name: "Investasi",
-            },
-            {
-              id: "651",
-              name: "Investasi",
-            },
-            {
-              id: "6511",
-              name: "SBN Online",
-            },
-            {
-              id: "6512",
-              name: "Deposito",
-            },
-            {
-              id: "63",
-              name: "Layanan Lainnya",
-            },
-            {
-              id: "660",
-              name: "Kurs Valas",
-            },
-            {
-              id: "661",
-              name: "Kurs Valas",
-            },
-            {
-              id: "6611",
-              name: "Informasi Kurs",
-            },
-            {
-              id: "6612",
-              name: "Kalkulator Kurs",
-            },
-            {
-              id: "6613",
-              name: "Tabel Nilai Tukar Kurs",
-            },
-            {
-              id: "670",
-              name: "MSPP",
-            },
-            {
-              id: "671",
-              name: "MSPP",
-            },
-            {
-              id: "6711",
-              name: "Curah & Kemasan",
-            },
-            {
-              id: "6712",
-              name: "Penawaran",
-            },
-            {
-              id: "6713",
-              name: "Produk Alokasi",
-            },
-            {
-              id: "6714",
-              name: "Pemantauan",
-            },
-            {
-              id: "6715",
-              name: "Rilis Manual",
-            },
-            {
-              id: "680",
-              name: "Rantai Pasokan",
-            },
-            {
-              id: "681",
-              name: "Rantai Pasokan",
-            },
-            {
-              id: "2",
-              name: "Tugas Saya",
-            },
-          ],
-        },
+        listMenu: [
+          {
+            id: "1",
+            name: "Beranda",
+          },
+          {
+            id: "6811",
+            name: "Pembiayaan Distribusi",
+          },
+          {
+            id: "3",
+            name: "Info Rekening",
+          },
+          {
+            id: "31",
+            name: "Info Rekening",
+          },
+          {
+            id: "311",
+            name: "Cek Saldo & Mutasi",
+          },
+          {
+            id: "312",
+            name: "Buka rekening Baru",
+          },
+          {
+            id: "4",
+            name: "Transaksi",
+          },
+          {
+            id: "41",
+            name: "Transfer",
+          },
+          {
+            id: "411",
+            name: "Single Transfer",
+          },
+          {
+            id: "412",
+            name: "Multi Transfer",
+          },
+          {
+            id: "413",
+            name: "Transfer Valas",
+          },
+          {
+            id: "42",
+            name: "Payroll",
+          },
+          {
+            id: "421",
+            name: "Payroll",
+          },
+          {
+            id: "422",
+            name: "Monitoring Payroll",
+          },
+          {
+            id: "43",
+            name: "Bayar & Beli",
+          },
+          {
+            id: "431",
+            name: "Bayar & Beli",
+          },
+          {
+            id: "432",
+            name: "Multi Bayar & Beli",
+          },
+          {
+            id: "44",
+            name: "Transaksi Lainnya",
+          },
+          {
+            id: "441",
+            name: "Transaksi Terjadwal",
+          },
+          {
+            id: "442",
+            name: "Transaksi Favorit",
+          },
+          {
+            id: "5",
+            name: "Manajemen Akun",
+          },
+          {
+            id: "6",
+            name: "Layanan Kami",
+          },
+          {
+            id: "61",
+            name: "Layanan Islami",
+          },
+          {
+            id: "611",
+            name: "Berbagi",
+          },
+          {
+            id: "612",
+            name: "Qurban",
+          },
+          {
+            id: "613",
+            name: "Haji & Umroh",
+          },
+          {
+            id: "614",
+            name: "Sertifikasi Produk Halal",
+          },
+          {
+            id: "62",
+            name: "Layanan Bisnis",
+          },
+          {
+            id: "620",
+            name: "Pembiayaan",
+          },
+          {
+            id: "621",
+            name: "Pembiayaan",
+          },
+          {
+            id: "6211",
+            name: "Pengajuan",
+          },
+          {
+            id: "6212",
+            name: "Tagihan",
+          },
+          {
+            id: "6213",
+            name: "Informasi",
+          },
+          {
+            id: "630",
+            name: "Kartu",
+          },
+          {
+            id: "631",
+            name: "Kartu",
+          },
+          {
+            id: "6311",
+            name: "Debit",
+          },
+          {
+            id: "6312",
+            name: "Kartu Hasanah",
+          },
+          {
+            id: "6313",
+            name: "Kartu Perusahaan",
+          },
+          {
+            id: "640",
+            name: "Merchant",
+          },
+          {
+            id: "641",
+            name: "Merchant",
+          },
+          {
+            id: "6411",
+            name: "Pendaftaran QRIS",
+          },
+          {
+            id: "6412",
+            name: "Pencatatan & Laporan Penjualan",
+          },
+          {
+            id: "6413",
+            name: "EDC",
+          },
+          {
+            id: "650",
+            name: "Investasi",
+          },
+          {
+            id: "651",
+            name: "Investasi",
+          },
+          {
+            id: "6511",
+            name: "SBN Online",
+          },
+          {
+            id: "6512",
+            name: "Deposito",
+          },
+          {
+            id: "63",
+            name: "Layanan Lainnya",
+          },
+          {
+            id: "660",
+            name: "Kurs Valas",
+          },
+          {
+            id: "661",
+            name: "Kurs Valas",
+          },
+          {
+            id: "6611",
+            name: "Informasi Kurs",
+          },
+          {
+            id: "6612",
+            name: "Kalkulator Kurs",
+          },
+          {
+            id: "6613",
+            name: "Tabel Nilai Tukar Kurs",
+          },
+          {
+            id: "670",
+            name: "MSPP",
+          },
+          {
+            id: "671",
+            name: "MSPP",
+          },
+          {
+            id: "6711",
+            name: "Curah & Kemasan",
+          },
+          {
+            id: "6712",
+            name: "Penawaran",
+          },
+          {
+            id: "6713",
+            name: "Produk Alokasi",
+          },
+          {
+            id: "6714",
+            name: "Pemantauan",
+          },
+          {
+            id: "6715",
+            name: "Rilis Manual",
+          },
+          {
+            id: "680",
+            name: "Rantai Pasokan",
+          },
+          {
+            id: "681",
+            name: "Rantai Pasokan",
+          },
+          {
+            id: "2",
+            name: "Tugas Saya",
+          },
+        ],
       })
     );
   } catch (error) {
