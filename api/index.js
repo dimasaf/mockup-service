@@ -75,9 +75,8 @@ router.post("/loginservice/v1/login/web", async (req, res) => {
     if (username === "Victoria01") {
       failCounts[username] = 0;
 
-      // Token yang sudah ada (masih dipakai)
       res.set(
-        "token",
+        "access-token",
         "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjpbIlJPTEVfQVBQUk9WRSJdLCJzZXNzaW9uX2tleSI6IklCfDEiLCJ1c2VyIjoiVmljdG9yaWEwMSIsInVzZXJfcHJvZmlsZV9pZCI6MSwidXNlcm5hbWUiOiJWaWN0b3JpYTAxIiwiY2hhbm5lbENvZGUiOiJJQiIsImV4cCI6MTc0NzM4NDg3N30.RIqJsSGH4BO4TNZvCk8UrAexN8EYr6GeMNsMKa_6cp5EGuVec8Jl3fDx6b7AGQ2CWuta5L-JlyD5sO82RpXidg"
       );
 
@@ -85,9 +84,9 @@ router.post("/loginservice/v1/login/web", async (req, res) => {
       const accessTokenPayload = {
         role: ["admin", "user"],
         session_key: "abc123def456ghi789",
-        user: "dimas.adji",
+        user: "kucing",
         user_profile_id: 101,
-        username: "dimas.adji",
+        username: "kucing anjing",
         channelCode: "WEBPORTAL",
         exp: 1767225600,
       };
@@ -114,10 +113,10 @@ router.post("/loginservice/v1/login/web", async (req, res) => {
           vcallStatus: "ENABLED",
           previousLogin: "2025-08-01T10:25:00Z",
           lastLogin: "2025-08-04T06:45:00Z",
-          profileImageUrl: "https://example.com/images/profile/dimas.jpg",
+          profileImageUrl: "https://example.com/images/profile/kucing.jpg",
           role: ["maker"],
           session_key: "abc123def456ghi789",
-          user: "dimas.adjisule",
+          user: "kucing sule",
           user_profile_id: 101,
           username: "sule",
           channelCode: "WEBPORTAL",
