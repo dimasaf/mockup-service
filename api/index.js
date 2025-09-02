@@ -658,7 +658,7 @@ router.post("/loginservice/v1/login/web", async (req, res) => {
       failCounts[username] = 0;
 
       res.set(
-        "access-token",
+        "access_token",
         "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjpbIlJPTEVfQVBQUk9WRSJdLCJzZXNzaW9uX2tleSI6IklCfDEiLCJ1c2VyIjoiVmljdG9yaWEwMSIsInVzZXJfcHJvZmlsZV9pZCI6MSwidXNlcm5hbWUiOiJWaWN0b3JpYTAxIiwiY2hhbm5lbENvZGUiOiJJQiIsImV4cCI6MTc0NzM4NDg3N30.RIqJsSGH4BO4TNZvCk8UrAexN8EYr6GeMNsMKa_6cp5EGuVec8Jl3fDx6b7AGQ2CWuta5L-JlyD5sO82RpXidg"
       );
 
