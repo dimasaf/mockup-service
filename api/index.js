@@ -61,6 +61,588 @@ const createMappedErrorResponse = (code, codeSystem, errorMapped = {}) => ({
 
 const failCounts = {};
 
+router.get("/name", async (req, res) => {
+  try {
+    await delay(5000);
+
+    res.set({
+      "Content-Type": "application/json",
+      "Cache-Control": "no-cache, no-store",
+    });
+
+    return res.status(200).json({
+      results: [
+        {
+          name: "suction-cups",
+          url: "https://pokeapi.co/api/v2/ability/21/",
+        },
+        {
+          name: "intimidate",
+          url: "https://pokeapi.co/api/v2/ability/22/",
+        },
+        {
+          name: "shadow-tag",
+          url: "https://pokeapi.co/api/v2/ability/23/",
+        },
+        {
+          name: "rough-skin",
+          url: "https://pokeapi.co/api/v2/ability/24/",
+        },
+        {
+          name: "wonder-guard",
+          url: "https://pokeapi.co/api/v2/ability/25/",
+        },
+        {
+          name: "levitate",
+          url: "https://pokeapi.co/api/v2/ability/26/",
+        },
+        {
+          name: "effect-spore",
+          url: "https://pokeapi.co/api/v2/ability/27/",
+        },
+        {
+          name: "synchronize",
+          url: "https://pokeapi.co/api/v2/ability/28/",
+        },
+        {
+          name: "clear-body",
+          url: "https://pokeapi.co/api/v2/ability/29/",
+        },
+        {
+          name: "natural-cure",
+          url: "https://pokeapi.co/api/v2/ability/30/",
+        },
+        {
+          name: "lightning-rod",
+          url: "https://pokeapi.co/api/v2/ability/31/",
+        },
+        {
+          name: "serene-grace",
+          url: "https://pokeapi.co/api/v2/ability/32/",
+        },
+        {
+          name: "swift-swim",
+          url: "https://pokeapi.co/api/v2/ability/33/",
+        },
+        {
+          name: "chlorophyll",
+          url: "https://pokeapi.co/api/v2/ability/34/",
+        },
+        {
+          name: "illuminate",
+          url: "https://pokeapi.co/api/v2/ability/35/",
+        },
+        {
+          name: "trace",
+          url: "https://pokeapi.co/api/v2/ability/36/",
+        },
+        {
+          name: "huge-power",
+          url: "https://pokeapi.co/api/v2/ability/37/",
+        },
+        {
+          name: "poison-point",
+          url: "https://pokeapi.co/api/v2/ability/38/",
+        },
+        {
+          name: "inner-focus",
+          url: "https://pokeapi.co/api/v2/ability/39/",
+        },
+        {
+          name: "magma-armor",
+          url: "https://pokeapi.co/api/v2/ability/40/",
+        },
+        {
+          name: "water-veil",
+          url: "https://pokeapi.co/api/v2/ability/41/",
+        },
+        {
+          name: "magnet-pull",
+          url: "https://pokeapi.co/api/v2/ability/42/",
+        },
+        {
+          name: "soundproof",
+          url: "https://pokeapi.co/api/v2/ability/43/",
+        },
+        {
+          name: "rain-dish",
+          url: "https://pokeapi.co/api/v2/ability/44/",
+        },
+        {
+          name: "sand-stream",
+          url: "https://pokeapi.co/api/v2/ability/45/",
+        },
+        {
+          name: "pressure",
+          url: "https://pokeapi.co/api/v2/ability/46/",
+        },
+        {
+          name: "thick-fat",
+          url: "https://pokeapi.co/api/v2/ability/47/",
+        },
+        {
+          name: "early-bird",
+          url: "https://pokeapi.co/api/v2/ability/48/",
+        },
+        {
+          name: "flame-body",
+          url: "https://pokeapi.co/api/v2/ability/49/",
+        },
+        {
+          name: "run-away",
+          url: "https://pokeapi.co/api/v2/ability/50/",
+        },
+        {
+          name: "keen-eye",
+          url: "https://pokeapi.co/api/v2/ability/51/",
+        },
+        {
+          name: "hyper-cutter",
+          url: "https://pokeapi.co/api/v2/ability/52/",
+        },
+        {
+          name: "pickup",
+          url: "https://pokeapi.co/api/v2/ability/53/",
+        },
+        {
+          name: "truant",
+          url: "https://pokeapi.co/api/v2/ability/54/",
+        },
+        {
+          name: "hustle",
+          url: "https://pokeapi.co/api/v2/ability/55/",
+        },
+        {
+          name: "cute-charm",
+          url: "https://pokeapi.co/api/v2/ability/56/",
+        },
+        {
+          name: "plus",
+          url: "https://pokeapi.co/api/v2/ability/57/",
+        },
+        {
+          name: "minus",
+          url: "https://pokeapi.co/api/v2/ability/58/",
+        },
+        {
+          name: "forecast",
+          url: "https://pokeapi.co/api/v2/ability/59/",
+        },
+        {
+          name: "sticky-hold",
+          url: "https://pokeapi.co/api/v2/ability/60/",
+        },
+        {
+          name: "shed-skin",
+          url: "https://pokeapi.co/api/v2/ability/61/",
+        },
+        {
+          name: "guts",
+          url: "https://pokeapi.co/api/v2/ability/62/",
+        },
+        {
+          name: "marvel-scale",
+          url: "https://pokeapi.co/api/v2/ability/63/",
+        },
+        {
+          name: "liquid-ooze",
+          url: "https://pokeapi.co/api/v2/ability/64/",
+        },
+        {
+          name: "overgrow",
+          url: "https://pokeapi.co/api/v2/ability/65/",
+        },
+        {
+          name: "blaze",
+          url: "https://pokeapi.co/api/v2/ability/66/",
+        },
+        {
+          name: "torrent",
+          url: "https://pokeapi.co/api/v2/ability/67/",
+        },
+        {
+          name: "swarm",
+          url: "https://pokeapi.co/api/v2/ability/68/",
+        },
+        {
+          name: "rock-head",
+          url: "https://pokeapi.co/api/v2/ability/69/",
+        },
+        {
+          name: "drought",
+          url: "https://pokeapi.co/api/v2/ability/70/",
+        },
+        {
+          name: "arena-trap",
+          url: "https://pokeapi.co/api/v2/ability/71/",
+        },
+        {
+          name: "vital-spirit",
+          url: "https://pokeapi.co/api/v2/ability/72/",
+        },
+        {
+          name: "white-smoke",
+          url: "https://pokeapi.co/api/v2/ability/73/",
+        },
+        {
+          name: "pure-power",
+          url: "https://pokeapi.co/api/v2/ability/74/",
+        },
+        {
+          name: "shell-armor",
+          url: "https://pokeapi.co/api/v2/ability/75/",
+        },
+        {
+          name: "air-lock",
+          url: "https://pokeapi.co/api/v2/ability/76/",
+        },
+        {
+          name: "tangled-feet",
+          url: "https://pokeapi.co/api/v2/ability/77/",
+        },
+        {
+          name: "motor-drive",
+          url: "https://pokeapi.co/api/v2/ability/78/",
+        },
+        {
+          name: "rivalry",
+          url: "https://pokeapi.co/api/v2/ability/79/",
+        },
+        {
+          name: "steadfast",
+          url: "https://pokeapi.co/api/v2/ability/80/",
+        },
+      ],
+    });
+  } catch (error) {
+    console.error("example Error:", error);
+    return res.status(500).json(
+      createMappedErrorResponse("103", "error bro", {
+        errorCode: "103",
+        engMessage: "error bro",
+        idnMessage: "error bro",
+      })
+    );
+  }
+});
+router.get("/ability", async (req, res) => {
+  try {
+    await delay(5000);
+
+    res.set({
+      "Content-Type": "application/json",
+      "Cache-Control": "no-cache, no-store",
+    });
+
+    return res.status(200).json({
+      results: [
+        {
+          name: "spearow",
+          url: "https://pokeapi.co/api/v2/pokemon/21/",
+        },
+        {
+          name: "fearow",
+          url: "https://pokeapi.co/api/v2/pokemon/22/",
+        },
+        {
+          name: "ekans",
+          url: "https://pokeapi.co/api/v2/pokemon/23/",
+        },
+        {
+          name: "arbok",
+          url: "https://pokeapi.co/api/v2/pokemon/24/",
+        },
+        {
+          name: "pikachu",
+          url: "https://pokeapi.co/api/v2/pokemon/25/",
+        },
+        {
+          name: "raichu",
+          url: "https://pokeapi.co/api/v2/pokemon/26/",
+        },
+        {
+          name: "sandshrew",
+          url: "https://pokeapi.co/api/v2/pokemon/27/",
+        },
+        {
+          name: "sandslash",
+          url: "https://pokeapi.co/api/v2/pokemon/28/",
+        },
+        {
+          name: "nidoran-f",
+          url: "https://pokeapi.co/api/v2/pokemon/29/",
+        },
+        {
+          name: "nidorina",
+          url: "https://pokeapi.co/api/v2/pokemon/30/",
+        },
+        {
+          name: "nidoqueen",
+          url: "https://pokeapi.co/api/v2/pokemon/31/",
+        },
+        {
+          name: "nidoran-m",
+          url: "https://pokeapi.co/api/v2/pokemon/32/",
+        },
+        {
+          name: "nidorino",
+          url: "https://pokeapi.co/api/v2/pokemon/33/",
+        },
+        {
+          name: "nidoking",
+          url: "https://pokeapi.co/api/v2/pokemon/34/",
+        },
+        {
+          name: "clefairy",
+          url: "https://pokeapi.co/api/v2/pokemon/35/",
+        },
+        {
+          name: "clefable",
+          url: "https://pokeapi.co/api/v2/pokemon/36/",
+        },
+        {
+          name: "vulpix",
+          url: "https://pokeapi.co/api/v2/pokemon/37/",
+        },
+        {
+          name: "ninetales",
+          url: "https://pokeapi.co/api/v2/pokemon/38/",
+        },
+        {
+          name: "jigglypuff",
+          url: "https://pokeapi.co/api/v2/pokemon/39/",
+        },
+        {
+          name: "wigglytuff",
+          url: "https://pokeapi.co/api/v2/pokemon/40/",
+        },
+        {
+          name: "zubat",
+          url: "https://pokeapi.co/api/v2/pokemon/41/",
+        },
+        {
+          name: "golbat",
+          url: "https://pokeapi.co/api/v2/pokemon/42/",
+        },
+        {
+          name: "oddish",
+          url: "https://pokeapi.co/api/v2/pokemon/43/",
+        },
+        {
+          name: "gloom",
+          url: "https://pokeapi.co/api/v2/pokemon/44/",
+        },
+        {
+          name: "vileplume",
+          url: "https://pokeapi.co/api/v2/pokemon/45/",
+        },
+        {
+          name: "paras",
+          url: "https://pokeapi.co/api/v2/pokemon/46/",
+        },
+        {
+          name: "parasect",
+          url: "https://pokeapi.co/api/v2/pokemon/47/",
+        },
+        {
+          name: "venonat",
+          url: "https://pokeapi.co/api/v2/pokemon/48/",
+        },
+        {
+          name: "venomoth",
+          url: "https://pokeapi.co/api/v2/pokemon/49/",
+        },
+        {
+          name: "diglett",
+          url: "https://pokeapi.co/api/v2/pokemon/50/",
+        },
+        {
+          name: "dugtrio",
+          url: "https://pokeapi.co/api/v2/pokemon/51/",
+        },
+        {
+          name: "meowth",
+          url: "https://pokeapi.co/api/v2/pokemon/52/",
+        },
+        {
+          name: "persian",
+          url: "https://pokeapi.co/api/v2/pokemon/53/",
+        },
+        {
+          name: "psyduck",
+          url: "https://pokeapi.co/api/v2/pokemon/54/",
+        },
+        {
+          name: "golduck",
+          url: "https://pokeapi.co/api/v2/pokemon/55/",
+        },
+        {
+          name: "mankey",
+          url: "https://pokeapi.co/api/v2/pokemon/56/",
+        },
+        {
+          name: "primeape",
+          url: "https://pokeapi.co/api/v2/pokemon/57/",
+        },
+        {
+          name: "growlithe",
+          url: "https://pokeapi.co/api/v2/pokemon/58/",
+        },
+        {
+          name: "arcanine",
+          url: "https://pokeapi.co/api/v2/pokemon/59/",
+        },
+        {
+          name: "poliwag",
+          url: "https://pokeapi.co/api/v2/pokemon/60/",
+        },
+        {
+          name: "poliwhirl",
+          url: "https://pokeapi.co/api/v2/pokemon/61/",
+        },
+        {
+          name: "poliwrath",
+          url: "https://pokeapi.co/api/v2/pokemon/62/",
+        },
+        {
+          name: "abra",
+          url: "https://pokeapi.co/api/v2/pokemon/63/",
+        },
+        {
+          name: "kadabra",
+          url: "https://pokeapi.co/api/v2/pokemon/64/",
+        },
+        {
+          name: "alakazam",
+          url: "https://pokeapi.co/api/v2/pokemon/65/",
+        },
+        {
+          name: "machop",
+          url: "https://pokeapi.co/api/v2/pokemon/66/",
+        },
+        {
+          name: "machoke",
+          url: "https://pokeapi.co/api/v2/pokemon/67/",
+        },
+        {
+          name: "machamp",
+          url: "https://pokeapi.co/api/v2/pokemon/68/",
+        },
+        {
+          name: "bellsprout",
+          url: "https://pokeapi.co/api/v2/pokemon/69/",
+        },
+        {
+          name: "weepinbell",
+          url: "https://pokeapi.co/api/v2/pokemon/70/",
+        },
+        {
+          name: "victreebel",
+          url: "https://pokeapi.co/api/v2/pokemon/71/",
+        },
+        {
+          name: "tentacool",
+          url: "https://pokeapi.co/api/v2/pokemon/72/",
+        },
+        {
+          name: "tentacruel",
+          url: "https://pokeapi.co/api/v2/pokemon/73/",
+        },
+        {
+          name: "geodude",
+          url: "https://pokeapi.co/api/v2/pokemon/74/",
+        },
+        {
+          name: "graveler",
+          url: "https://pokeapi.co/api/v2/pokemon/75/",
+        },
+        {
+          name: "golem",
+          url: "https://pokeapi.co/api/v2/pokemon/76/",
+        },
+        {
+          name: "ponyta",
+          url: "https://pokeapi.co/api/v2/pokemon/77/",
+        },
+        {
+          name: "rapidash",
+          url: "https://pokeapi.co/api/v2/pokemon/78/",
+        },
+        {
+          name: "slowpoke",
+          url: "https://pokeapi.co/api/v2/pokemon/79/",
+        },
+        {
+          name: "slowbro",
+          url: "https://pokeapi.co/api/v2/pokemon/80/",
+        },
+      ],
+    });
+  } catch (error) {
+    console.error("example Error:", error);
+    return res.status(500).json(
+      createMappedErrorResponse("103", "error bro", {
+        errorCode: "103",
+        engMessage: "error bro",
+        idnMessage: "error bro",
+      })
+    );
+  }
+});
+
+router.post("/loginservice/v1/login/phone-number", async (req, res) => {
+  try {
+    const { username } = req.body;
+
+    await delay(150);
+
+    res.set({
+      "Content-Type": "application/json",
+      "Cache-Control": "no-cache, no-store",
+    });
+
+    if (username === "Victoria01") {
+      return res.status(200).json(
+        createSuccessResponse({
+          phoneNumber: "08912312312312",
+        })
+      );
+    }
+
+    if (username === "user") {
+      return res.status(400).json(
+        createGeneralErrorResponse({
+          code: "0020",
+          codeSystem: "BSI-XPAN",
+          message: "dlkajjdal Server Error",
+          activityRefCode: "456d9314-cf4e-4fe1-a256-8ffcf51b2c99",
+        })
+      );
+    }
+
+    failCounts[username] = (failCounts[username] || 0) + 1;
+
+    return res.status(400).json(
+      createMappedErrorResponse("103", "Invalid Credential", {
+        errorCode: "103",
+        engMessage: "Invalid Credential",
+        idnMessage: "Salah Kredential",
+        failCount: failCounts[username],
+      })
+    );
+  } catch (error) {
+    console.error("Login Error:", error);
+    return res.status(500).json(
+      createGeneralErrorResponse({
+        code: "0021",
+        codeSystem: "BSI-XPAN",
+        message: "dlkajjdal Server Error",
+        activityRefCode: "456d9314-cf4e-4fe1-a256-8ffcf51b2c99",
+      })
+    );
+  }
+});
+
 router.post("/loginservice/v1/login/web", async (req, res) => {
   try {
     const { username } = req.body;
