@@ -676,7 +676,7 @@ router.post("/loginservice/v1/login/web", async (req, res) => {
       const encodedAccessToken = Buffer.from(
         JSON.stringify(accessTokenPayload)
       ).toString("base64");
-      res.set("access-token", encodedAccessToken);
+      res.set("access_token", encodedAccessToken);
 
       return res.status(200).json(
         createSuccessResponse({
